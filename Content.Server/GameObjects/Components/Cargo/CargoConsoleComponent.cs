@@ -110,6 +110,11 @@ namespace Content.Server.GameObjects.Components.Cargo
                         break;
                     }
 
+		    if (msg.Amount > 20)
+		    {
+			msg.Amount = 20;
+		    }
+
                     _cargoConsoleSystem.AddOrder(orders.Database.Id, msg.Requester, msg.Reason, msg.ProductId, msg.Amount, _bankAccount.Id);
                     break;
                 }
